@@ -62,7 +62,8 @@ def parse_cfg(cfgfile):
     blocks.append(holder)
     return blocks
     
-def yolov3(cfgfile, model_size, num_classes):
+def yolov3(cfgfile, model_size, num_classes):   #this project took heavy inspiration from this blog post
+                                                #https://mc.ai/the-beginners-guide-to-implementing-yolo-v3-in-tensorflow-2-0-part-1/
     blocks = parse_cfg(cfgfile)
     outputs = {}
     output_filters = []

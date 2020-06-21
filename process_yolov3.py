@@ -57,6 +57,7 @@ def main():
     model_path = "/home/jeevan/code/tf/yolov3/yolov3.h5"
     class_file = "/home/jeevan/code/tf/yolov3/coco.names"
     imgpath = sys.argv[1]
+    img_out = imgpath.split('.')[0] + "_modified.png"
 
     model_size = (416, 416, 3)
     num_classes = 80
@@ -90,7 +91,9 @@ def main():
     win_name = "YoloV3"
     cv2.imshow(win_name, img)
     cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
+
+    cv2.imwrite(img_out, img)
 
 if __name__ == "__main__":
     main()
